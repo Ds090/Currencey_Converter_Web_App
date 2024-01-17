@@ -44,7 +44,7 @@ const CurrencyConverter = () => {
               currencies={currencies}
             />
           </div>
-          <button onClick={() => swapCurrency()}><FontAwesomeIcon icon={faRightLeft} className="mt-6"/></button>
+          <button onClick={() => swapCurrency()}><FontAwesomeIcon icon={faRightLeft} className="mt-9"/></button>
           <div>
             <label className="text-lg font-semibold">To</label>
             <CurrencyOptions
