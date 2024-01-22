@@ -15,7 +15,9 @@ const CurrencyConverter = () => {
     currencies,
     swapCurrency,
     isloading,
-    amount
+    amount,
+    toFlage,
+    fromFlage
   } = useHooksCurrencey();
 
   return (
@@ -42,6 +44,7 @@ const CurrencyConverter = () => {
               currenciesdiraction={fromCurrency}
               setDiraction={setFromCurrency}
               currencies={currencies}
+              flag={fromFlage}
             />
           </div>
           <button onClick={() => swapCurrency()}><FontAwesomeIcon icon={faRightLeft} className="mt-9 text-lg"/></button>
@@ -51,6 +54,7 @@ const CurrencyConverter = () => {
               currenciesdiraction={toCurrency}
               setDiraction={setToCurrency}
               currencies={currencies}
+              flag={toFlage}
             />
           </div>
         </div>

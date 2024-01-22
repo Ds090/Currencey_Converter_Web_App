@@ -10,6 +10,8 @@ function useHooksCurrencey() {
   const [amount, setAmount] = useState(1);
   const [convertedAmount, setConvertedAmount] = useState(null);
   const [isloading, setisloading] = useState(true);
+  const [fromFlage, setFromFlage] = useState(null);
+  const [toFlage, settoFlage] = useState(null);
 
   async function downloadCurrency() {
     
@@ -25,6 +27,24 @@ function useHooksCurrencey() {
     }
     
   }
+
+  
+    const fetchCurrencyFlags = async () => {
+      try {
+        // Replace these URLs with the actual URLs of your flag images based on currency codes
+        const fromFlag = `https://flagcdn.com/48x36/${fromCurrency.toLowerCase().substring(0,2)}.png`;
+        const toFlag = `https://flagcdn.com/48x36/${toCurrency.toLowerCase().substring(0,2)}.png`;
+        console.log(fromFlag);
+
+        setFromFlage(fromFlag);
+        settoFlage(toFlag);
+      } catch (error) {
+        console.error('Error fetching currency flags:', error);
+      }
+    };
+
+    
+ 
 
   async function convertCurrency() {
     setisloading(true);
@@ -47,8 +67,9 @@ function useHooksCurrencey() {
   useEffect(() => {
     downloadCurrency();
         convertCurrency();
+        fetchCurrencyFlags();
     
-  }, [fromCurrency, toCurrency, amount]);
+  }, [fromCurrency, toCurrency, amount, fromCurrency, toCurrency]);
 
   const swapCurrency = () => {
     setFromCurrency(toCurrency);
@@ -68,7 +89,9 @@ function useHooksCurrencey() {
     currencies,
     convertedAmount,
     swapCurrency,
-    isloading
+    isloading,
+    fromFlage, 
+    toFlage
   };
 }
 
