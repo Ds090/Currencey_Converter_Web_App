@@ -24,7 +24,7 @@ const CurrencyConverter = () => {
       <div className="w-full h-[10%] flex flex-col justify-center">
       <h1 className="text-center text-2xl font-bold bg-clip-text text-transparent lg:text-3xl" id="back-2">Currency Converter</h1>
       </div>
-      <FontAwesomeIcon icon={faCoins} className="text-7xl text-yellow-400"/>
+      <FontAwesomeIcon icon={faCoins} className="text-7xl text-yellow-400 animate-bounce"/>
         <div className="flex flex-col">
           <label className="text-lg font-semibold lg:text-xl">Enter {fromCurrency} Amount</label>
           <div className="shadow-md shadow-teal-300 border-black border rounded" >
