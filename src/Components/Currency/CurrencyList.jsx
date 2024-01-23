@@ -76,7 +76,7 @@ const CurrencyConverter = () => {
         {amount.length === 0 ? <div className="text-center text-lg font-semibold text-[#e50914] lg:text-xl">Please Enter any Amount!</div> : isloading ? <div className="flex justify-center"><Loader/></div> : <div className="flex flex-col text-lg font-semibold gap-1">
           <p className="text-center lg:text-xl">Converted Amount:</p> 
           <div>
-            <p className="text-center lg:text-xl">{convertedAmount} {toCurrency}</p>
+            <p className="text-center lg:text-xl flex justify-center items-center gap-1">{convertedAmount} {toCurrency} <img src={toFlage} alt="" className="w-[30px]"/></p>
           </div>
         </div>}
       </section>
