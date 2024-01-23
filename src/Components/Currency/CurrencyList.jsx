@@ -55,7 +55,6 @@ const CurrencyConverter = () => {
               setDiraction={setToCurrency}
               currencies={currencies}
               flag={toFlage}
-              flag2={toFlage}
             />
           </div>
         </div>
